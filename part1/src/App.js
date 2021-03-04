@@ -1,10 +1,11 @@
 import './App.css';
 import Mensaje from './Mensaje';
 
-const Description = () => {
+const Description = ({text}) => {
   return (
     <p>
-      Esta es la app de fullstack bootcamp
+      {/* Esta es la app de fullstack bootcamp */}
+      {text}
     </p>
   )
 }
@@ -14,7 +15,7 @@ const App = () => {
   return (
     <div className="App">
       <Mensaje color ='red' message='Mensaje pasado por parametro'/>
-      <Description />
+      <Description text='Probando otra forma de usar parametros'/>
     </div>
   );
 }

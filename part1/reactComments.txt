@@ -45,3 +45,23 @@ const Mensaje = (props) => {
  <Mensaje message='Mensaje pasado por parametro'/>
 
  en react tengo que retornar una sola cosa siempre, para esto envuelvo todo en un div o envuelvo todo en un fragment que se hace de la siguiente manera: <> contenido </>
+
+ para pasar parametros se puede hacer de las siguientes dos formas y es lo mismo:
+ const Description = (props) => {
+  return (
+    <p>
+      {/* Esta es la app de fullstack bootcamp */}
+      {props.text}
+    </p>
+  )
+}
+o
+ const Description = ({text}) => {
+  return (
+    <p>
+      {/* Esta es la app de fullstack bootcamp */}
+      {text}
+    </p>
+  )
+}
+si se pasan mas de un parametro en la segunda forma se lo hace de la siguiente manera: {color, message}
