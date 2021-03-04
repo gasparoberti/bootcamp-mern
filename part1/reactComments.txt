@@ -1,0 +1,47 @@
+como create react app te crea un repo de git lo ideal para que no haya mas de un repo en la misma carpeta es primero crear el repo en git, vincular la carpeta vacia con el git remoto y despues de eso recien crear la app de react con el comando npx.
+por ultimo hacer un commit con las cosas que agregó el nuevo proyecto.
+
+// function App() {
+//   return (
+//     <div className="App">
+//       Hola Mundo!
+//     </div>
+//   );
+// }
+
+//es lo mismo si usamos funciones comnunes (arriba) o funcion flecha (abajo)
+const App = () => {
+  // const mensaje = 'Hola Mundo!'
+  return (
+    <div className="App">
+      {/* {mensaje} entre las llaves se accede el contenido de la variable */}
+      {/* {mensaje + ' contenido concatenado'} se puede concatenar tambien */}
+
+      {/* entre llaves se pueden evaluar solo cosas que se puedan renderizar (principalmente strings) pero no objetos */}
+
+    </div>
+  );
+}
+
+
+no crear componentes dentro de componentes porque no es una buena practica!
+es mas, lo mejor es que cada componente tenga su archivo js
+
+para pasar parametros en componentes hacemos:
+
+const Mensaje = (props) => {
+    console.log(props)
+    return (
+      <h1>
+        {/* Hola mundo! */}
+        {props.message}
+      </h1>
+    )
+  }
+
+  export default Mensaje
+
+  y en el comp en el que llamamos y pasamos el parametros lo hacemos de la siguiente manera:
+ <Mensaje message='Mensaje pasado por parametro'/>
+
+ en react tengo que retornar una sola cosa siempre, para esto envuelvo todo en un div o envuelvo todo en un fragment que se hace de la siguiente manera: <> contenido </>
