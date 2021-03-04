@@ -1,4 +1,5 @@
 import './App.css';
+import { Contador } from './Contador';
 import Mensaje from './Mensaje';
 
 const Description = ({text}) => {
@@ -16,6 +17,7 @@ const App = () => {
     <div className="App">
       <Mensaje color ='red' message='Mensaje pasado por parametro'/>
       <Description text='Probando otra forma de usar parametros'/>
+      <Contador />
     </div>
   );
 }

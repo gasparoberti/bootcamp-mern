@@ -1,3 +1,6 @@
+clase 2
+
+
 como create react app te crea un repo de git lo ideal para que no haya mas de un repo en la misma carpeta es primero crear el repo en git, vincular la carpeta vacia con el git remoto y despues de eso recien crear la app de react con el comando npx.
 por ultimo hacer un commit con las cosas que agregó el nuevo proyecto.
 
@@ -65,3 +68,41 @@ o
   )
 }
 si se pasan mas de un parametro en la segunda forma se lo hace de la siguiente manera: {color, message}
+
+--------------------------------------------------------------------------
+clase 3
+
+un componente se renderiza cada ve que: 
+    1. cambia el estado
+    2. le llegan props nuevas
+
+no se recomienda usar setInterval o ese tipo de funciones porque cada vez que se renderiza el componente se vuelve a ejecutar el setInterval
+
+asi como existe la funcion onClick hay muchas mas como por ejemplo onDoubleClick, onDrag, etc.. buscarlas en la documentacion de react
+
+para usar un evento en el boton puedo hacerlo de dos maneras:
+<button onClick={() => {
+    setContador(contador + 1)
+}}
+>
+o
+
+const handlClick = () => {
+    setContador(contador + 1)
+}
+
+<button onClick={handlClick}
+>
+las dos maneras estan bien y hacen lo mismo.
+
+es bueno tener la minima cantidad de estados (no se por que..)
+
+LOS HOOKS NO PUEDEN IR ENTRE CONDICIONALES!
+
+el handleClick se puede hacer de cualquiera de las siguientes formas:
+const handlClick = () => {
+        // setContador(contador + 1)    //aca le paso el nuevo valor
+        // setContador(prevContador => prevContador + 1)    //aca le paso una funcion para calcular el nuevo valor
+        setContador((prevContador) => {return (prevContador + 1)})
+    }
+    
